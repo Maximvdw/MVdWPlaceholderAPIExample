@@ -1,0 +1,13 @@
+##
+# MVdWPlaceholderAPI Example
+#
+# @copyright Maxim Van de Wynckel
+##
+
+name: MVdWPlaceholderAPI-Example
+version: 1.0.0
+description: Placeholder API Example
+author: Maximvdw
+website: http://www.mvdw-software.com/
+main: be.maximvdw.placeholderapiexample.PlaceholderAPIExample
+softdepends: [MVdWPlaceholderAPI]
