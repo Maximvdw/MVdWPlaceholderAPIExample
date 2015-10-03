@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import be.maximvdw.placeholderapi.PlaceholderAPI; // The main API
@@ -73,5 +74,16 @@ public class PlaceholderAPIExample extends JavaPlugin implements Listener {
 
 			event.setJoinMessage(welcomeMessage);
 		}
+	}
+
+	@EventHandler
+	public void onServerPing(ServerListPingEvent event) {
+		String serverMOTD = ChatColor.WHITE
+				+ "Test Plugins online: {isonline@testplugins.com:25565}";
+		// Replace the placeholders inside the server MOTD
+		serverMOTD = PlaceholderAPI.replacePlaceholders(null,
+				serverMOTD);
+		
+		event.setMotd(serverMOTD);
 	}
 }
